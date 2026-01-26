@@ -1,81 +1,86 @@
 import { useState } from "react";
-import { CircleX, Menu } from "lucide-react";
+import { CircleX, Github, Linkedin, Menu } from "lucide-react";
 import { Link } from "react-router";
+import { navData } from "../../data/navItem";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
+  const toggleMenu = () => setIsOpen(!isOpen);
 
   return (
-    <header className="fixed w-full z-50 font-serif transition-all text-primary ">
-      <div className="container max-w-7xl mx-auto px-6 flex items-center justify-between p-4">
-        {/* Logo */}
-        <Link to={"/"} className="text-2xl font-bold">
+    <header className="fixed w-full z-50 font-poppins">
+      <div className="container max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
+        {/* Logo with Glow Effect */}
+        <Link
+          to="/"
+          className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(167,209,41,0.5)]"
+        >
           Zainab Hilal
         </Link>
 
-        {/* Toggle Button - always visible */}
+        {/* Menu Toggle Button */}
         <button
-          className="text-2xl"
+          className="p-2 text-primary hover:bg-primary/10 transition-all duration-300 rounded-full active:scale-90"
           onClick={toggleMenu}
           aria-label="Toggle menu"
         >
-          {isOpen ? <CircleX /> : <Menu />}
+          <Menu size={28} className="stroke-[2px]" />
         </button>
       </div>
 
-      {/* Mobile Menu (or Side Menu for all screens) */}
+      {/* Sidebar Menu */}
       <div
-        className={`fixed top-0 left-0 h-full w-64 bg-[#000000] text-white transform ${
+        className={`fixed top-0 left-0 h-full w-72 bg-[#0a0a0a]/95 backdrop-blur-xl text-white transform ${
           isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-300 ease-in-out`}
+        } transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-[60] border-r border-primary/20 shadow-2xl`}
       >
-        <div className="flex flex-col justify-center  p-6 space-y-6">
-          <Link
-            to={"/"}
-            className="text-primary border-primary border-2 rounded-md px-3 py-1 hover:bg-primary hover:text-black transition"
+        <div className="flex justify-end p-6">
+          <button
             onClick={toggleMenu}
+            className="group p-1"
+            aria-label="Close menu"
           >
-            Home
+            <CircleX className="text-primary w-9 h-9 group-hover:scale-110 transition-all duration-300" />
+          </button>
+        </div>
+
+        <nav className="flex flex-col p-6 space-y-4">
+          {navData.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className="flex items-center gap-4 text-primary border border-primary/30 rounded-2xl px-6 py-4 hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(167,209,41,0.4)] transition-all duration-300 text-lg font-medium group"
+              onClick={toggleMenu}
+            >
+              <item.icon
+                size={22}
+                className="group-hover:scale-110 transition-transform"
+              />
+              <span>{item.name}</span>
+            </Link>
+          ))}
+        </nav>
+
+        <div className="social flex p-2 mx-10 items-center gap-5  ">
+          <Link
+            to={""}
+            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(167,209,41,0.4)] transition-all duration-300"
+          >
+            <Linkedin />
           </Link>
           <Link
-            to={"/"}
-            className="text-primary border-primary border-2 rounded-md px-3 py-1 hover:bg-primary hover:text-black transition cursor-pointer"
-            onClick={toggleMenu}
+            to={""}
+            className="text-primary border border-primary/30  p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(167,209,41,0.4)] transition-all duration-300"
           >
-            About
-          </Link>
-          <Link
-            to={"/"}
-            className="text-primary border-primary border-2 rounded-md px-3 py-1 hover:bg-primary hover:text-black transition"
-            onClick={toggleMenu}
-          >
-            Services
-          </Link>
-          <Link
-            to={"/"}
-            className="text-primary border-primary border-2 rounded-md px-3 py-1 hover:bg-primary hover:text-black transition"
-            onClick={toggleMenu}
-          >
-            Services
-          </Link>
-          <Link
-            to={"/"}
-            className="text-primary border-primary border-2 rounded-md px-3 py-1 hover:bg-primary hover:text-black transition"
-            onClick={toggleMenu}
-          >
-            Contact
+            <Github />
           </Link>
         </div>
       </div>
 
-      {/* Overlay */}
+      {/* Enhanced Overlay */}
       {isOpen && (
         <div
-          className="fixed inset-0 bg-black opacity-30"
+          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-55 transition-opacity duration-300"
           onClick={toggleMenu}
         ></div>
       )}
