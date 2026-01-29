@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CircleX, Github, Linkedin, Menu } from "lucide-react";
 import { Link } from "react-router";
 import { navData } from "../../data/navItem";
@@ -6,9 +6,22 @@ import { navData } from "../../data/navItem";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const toggleMenu = () => setIsOpen(!isOpen);
+  const [scrolled, setScrolled] = useState(false);
 
+  // Blur effect on scroll
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
   return (
-    <header className="fixed w-full z-50 font-poppins">
+    <header
+      className={`fixed w-full z-50 font-poppins transition-all duration-300 ${
+        scrolled
+          ? "backdrop-blur-md bg-black/50 shadow-md border-b border-gray-200 dark:border-white/10"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
       <div className="container max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
         {/* Logo with Glow Effect */}
         <Link
