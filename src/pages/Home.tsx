@@ -1,6 +1,4 @@
-import About from "../components/section/About";
-import Hero from "../components/section/Hero";
-import Skills from "../components/section/Skills";
+import { About, Hero, Skills } from "@components/index";
 
 const Home = () => {
   return (

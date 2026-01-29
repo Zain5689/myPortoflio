@@ -1,8 +1,8 @@
-import Heading from "../common/Heading";
+import { Heading } from "@components/index";
 
 const Skills = () => {
   return (
-    <div>
+    <div className="font-Roboto">
       <Heading title="Skills" />
     </div>
   );
