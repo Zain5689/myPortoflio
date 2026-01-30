@@ -4,5 +4,6 @@ import Heading from "./common/Heading";
 import Hero from "./section/Hero";
 import About from "./section/About";
 import Skills from "./section/Skills";
+import Projects from "./section/projects";
 
-export { Header, Footer, Heading, Hero, About, Skills };
+export { Header, Footer, Heading, Hero, About, Skills, Projects };
