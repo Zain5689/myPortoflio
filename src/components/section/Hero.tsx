@@ -48,9 +48,14 @@ const Hero = () => {
           <button className="bg-primary text-black px-8 py-3 rounded-full font-bold hover:shadow-[0_0_5px_#a7d129] transition-all">
             Contact Me
           </button>
-          <button className="border border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary/10 transition-all">
+          <a
+            href="/Zainab_Hilal.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="border border-primary text-primary px-8 py-3 rounded-full font-bold hover:bg-primary/10 transition-all inline-block"
+          >
             View Resume
-          </button>
+          </a>
         </div>
       </div>
 
