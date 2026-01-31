@@ -100,21 +100,3 @@ export const projects = [
     github: "https://github.com/Zain5689/Admin_Dashboard",
   },
 ];
-
-export const skills = [
-  { id: "1", title: "HTML" },
-  { id: "2", title: "CSS" },
-  { id: "3", title: "SCSS" },
-  { id: "4", title: "Bootstrap" },
-  { id: "5", title: "Tailwind" },
-  { id: "6", title: "JavaScript" },
-  { id: "7", title: "TypeScript" },
-  { id: "8", title: "React" },
-  { id: "9", title: "Redux" },
-  { id: "10", title: "NextJS" },
-  { id: "11", title: "React Hook Form" },
-  { id: "12", title: "Redux Toolkit" },
-  { id: "13", title: "Git" },
-  { id: "14", title: "GitHub" },
-  { id: "15", title: "Figma" },
-];
