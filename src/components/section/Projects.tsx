@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Github, Link2 } from "lucide-react";
+import { Github, Link2, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Heading } from "@components/index";
 import { projects } from "@data/projects";
@@ -20,7 +20,7 @@ const Projects = () => {
   ];
 
   return (
-    <section className="bg-bg-dark py-24 px-6 relative overflow-hidden">
+    <section className=" py-24 px-6 relative overflow-hidden">
       <div className="absolute top-1/4 -right-20 w-80 h-80 bg-primary/5 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-primary/5 rounded-full blur-[120px] -z-10"></div>
 
@@ -36,7 +36,7 @@ const Projects = () => {
                 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-500
                 ${
                   active === btn.key
-                    ? "bg-primary text-white shadow-[0_0_10px_rgba(93,188,252,0.4)] -translate-y-1"
+                    ? "bg-primary text-white shadow-[0_0_10px_rgba(93,188,252,0.4)]"
                     : "bg-surface/40 text-text-muted border border-white/5 hover:border-primary/30 hover:text-primary"
                 }
               `}
@@ -50,7 +50,7 @@ const Projects = () => {
           {filteredProjects.map((project) => (
             <article
               key={project.id}
-              className="group bg-surface/20 backdrop-blur-md rounded-[2rem] border border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
+              className="group bg-surface/20 backdrop-blur-md rounded-xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_40px_rgba(0,0,0,0.3)]"
             >
               <div className="relative h-60 overflow-hidden">
                 <img
@@ -77,22 +77,23 @@ const Projects = () => {
                   <div className="flex gap-6">
                     <Link
                       to={project.link}
-                      className="text-text-muted hover:text-primary transition-all duration-300 hover:scale-125"
+                      className="text-text-muted hover:text-primary transition-all duration-300 hover:scale-110"
                     >
                       <Link2 />
                     </Link>
                     <Link
                       to={project.github}
-                      className="text-text-muted hover:text-primary transition-all duration-300 hover:scale-125"
+                      className="text-text-muted hover:text-primary transition-all duration-300 hover:scale-110"
                     >
                       <Github />
                     </Link>
                   </div>
                   <Link
                     to={`/project/${project.id}`}
-                    className="group/btn inline-flex items-center gap-2 text-primary font-bold text-xs tracking-[0.15em] uppercase"
+                    className="group/btn inline-flex items-center gap-2 text-primary font-bold text-xs tracking-[0.15em]"
                   >
-                    View Details
+                    Learn More
+                    <MoveRight />
                     <span className="icon-long-arrow-right transition-transform duration-300 group-hover/btn:translate-x-2"></span>
                   </Link>
                 </div>
