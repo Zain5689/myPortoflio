@@ -1,6 +1,5 @@
 import { Outlet } from "react-router-dom";
-import { Footer, Header } from "@components/index";
-// import BackToTop from "@/components/common/BackToTop/BackToTop";
+import { Footer, Header, BackToTop } from "@components/index";
 import { useContext } from "react";
 import { ThemeContext } from "@context/themeContext";
 import ParticlesBackground from "@components/ParticlesBackground";
@@ -19,7 +18,7 @@ const MainLayout = () => {
           <Outlet />
         </div>
       </main>
-      {/* <BackToTop /> */}
+      <BackToTop />
       <Footer />
     </div>
   );

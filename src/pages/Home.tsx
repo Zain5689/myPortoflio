@@ -1,4 +1,4 @@
-import { About, Hero, Skills, Projects } from "@components/index";
+import { About, Hero, Skills, Projects, Education } from "@components/index";
 
 const Home = () => {
   return (
@@ -7,6 +7,7 @@ const Home = () => {
       <About />
       <Skills />
       <Projects />
+      <Education />
     </div>
   );
 };
