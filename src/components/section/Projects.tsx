@@ -16,7 +16,7 @@ const Projects = () => {
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
 
       <div className="max-w-7xl mx-auto">
-        <Heading title=" Projects" />
+        <Heading title="Featured Projects" />
 
         <div className="flex flex-wrap justify-center gap-3 mt-12 mb-20">
           {categories.map((btn) => (
@@ -42,7 +42,7 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <article
                 key={project.id}
-                className="group bg-surface/20 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+                className="group bg-surface/20 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500  hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img

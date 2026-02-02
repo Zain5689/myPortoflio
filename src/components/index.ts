@@ -7,6 +7,7 @@ import Skills from "./section/Skills";
 import Projects from "./section/Projects";
 import Education from "./section/Education";
 import BackToTop from "./common/BackToTop";
+import Contact from "./section/Contact";
 
 export {
   Header,
@@ -18,4 +19,5 @@ export {
   Projects,
   Education,
   BackToTop,
+  Contact,
 };
