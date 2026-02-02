@@ -7,7 +7,6 @@ import { categories } from "@data/categories";
 
 const Projects = () => {
   const [active, setActive] = useState("all");
-
   const filteredProjects =
     active === "all" ? projects : projects.filter((p) => p.category === active);
 

@@ -1,103 +1,114 @@
 import { useEffect, useState } from "react";
 import { CircleX, Github, Linkedin, Menu } from "lucide-react";
-import { Link } from "react-router";
+import { Link } from "react-router-dom";
 import { navData } from "../../data/navItem";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const toggleMenu = () => setIsOpen(!isOpen);
   const [scrolled, setScrolled] = useState(false);
-
-  // Blur effect on scroll
+  const toggleMenu = () => setIsOpen((prev) => !prev);
+  // Blur on scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+  // Lock scroll when sidebar open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? "hidden" : "auto";
+  }, [isOpen]);
   return (
-    <header
-      className={`fixed w-full z-50 font-poppins transition-all duration-300 ${
-        scrolled
-          ? "backdrop-blur-md bg-black/50 shadow-md border-b border-primary dark:border-white/10"
-          : "bg-transparent border-b border-transparent"
-      }`}
-    >
-      <div className="container max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
-        {/* Logo with Glow Effect */}
-        <Link
-          to="/"
-          className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(95,45,237,0.1)"
-        >
-          Zainab Hilal
-        </Link>
-
-        {/* Menu Toggle Button */}
-        <button
-          className="p-2 text-primary hover:bg-primary/10 transition-all duration-300 rounded-full active:scale-90"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <Menu size={28} className="stroke-[2px]" />
-        </button>
-      </div>
-
-      {/* Sidebar Menu */}
-      <div
-        className={`fixed top-0 left-0 h-full w-72 bg-[#0a0a0a]/95 backdrop-blur-xl text-white transform ${
-          isOpen ? "translate-x-0" : "-translate-x-full"
-        } transition-transform duration-500 ease-[cubic-bezier(0.4,0,0.2,1)] z-[60] border-r border-primary/20 shadow-2xl`}
+    <>
+      {/* Header */}
+      <header
+        className={`fixed top-0 w-full z-40 font-poppins transition-all duration-300 ${
+          scrolled
+            ? "backdrop-blur-md bg-black/60 shadow-md border-b border-primary/20"
+            : "bg-transparent"
+        }`}
       >
-        <div className="flex justify-end p-6">
+        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
+          {/* Logo */}
+          <Link
+            to="/"
+            className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(95,45,237,0.4)]"
+          >
+            Zainab Hilal
+          </Link>
+
+          {/* Toggle */}
           <button
             onClick={toggleMenu}
-            className="group p-1"
-            aria-label="Close menu"
+            className="p-2 text-primary rounded-full hover:bg-primary/10 transition-all active:scale-90"
           >
-            <CircleX className="text-primary w-9 h-9 group-hover:scale-110 transition-all duration-300" />
+            <Menu size={28} />
+          </button>
+        </div>
+      </header>
+
+      {/* Overlay */}
+      {isOpen && (
+        <div
+          className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
+          onClick={toggleMenu}
+        />
+      )}
+      {/* Sidebar */}
+      <aside
+        className={`fixed top-0 left-0 h-full w-72 z-60
+        bg-[#0a0a0a]/95 backdrop-blur-xl
+        transform ${isOpen ? "translate-x-0" : "-translate-x-full"}
+        transition-transform duration-500 ease-in-out
+        border-r border-primary/20 shadow-2xl`}
+      >
+        {/* Close */}
+        <div className="flex justify-end p-6">
+          <button onClick={toggleMenu}>
+            <CircleX className="text-primary w-9 h-9 hover:scale-110 transition" />
           </button>
         </div>
 
+        {/* Nav */}
         <nav className="flex flex-col p-6 space-y-4">
           {navData.map((item) => (
             <Link
               key={item.name}
               to={item.path}
-              className="flex items-center gap-4 text-primary border border-primary/30 rounded-2xl px-6 py-4 hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(95,45,237,0.1)] transition-all duration-300 text-lg font-medium group"
               onClick={toggleMenu}
+              className="
+                flex items-center gap-4
+                text-primary border border-primary/30
+                rounded-2xl px-6 py-4
+                hover:bg-primary hover:text-black
+                transition-all duration-300
+              "
             >
-              <item.icon
-                size={22}
-                className="group-hover:scale-110 transition-transform"
-              />
-              <span>{item.name}</span>
+              <item.icon size={22} />
+              {item.name}
             </Link>
           ))}
         </nav>
-
-        <div className="social flex p-2 mx-10 items-center gap-5  ">
-          <Link
-            to={""}
-            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(95,45,237,0.1)] transition-all duration-300"
+        {/* Social */}
+        <div className="flex p-6 gap-4">
+          <a
+            href="https://linkedin.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
           >
             <Linkedin />
-          </Link>
-          <Link
-            to={""}
-            className="text-primary border border-primary/30  p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(95,45,237,0.1)] transition-all duration-300"
+          </a>
+          <a
+            href="https://github.com"
+            target="_blank"
+            rel="noreferrer"
+            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
           >
             <Github />
-          </Link>
+          </a>
         </div>
-      </div>
-
-      {/* Enhanced Overlay */}
-      {isOpen && (
-        <div
-          className="fixed inset-0 bg-black/60 backdrop-blur-sm z-55 transition-opacity duration-300"
-          onClick={toggleMenu}
-        ></div>
-      )}
-    </header>
+      </aside>
+    </>
   );
 };
 

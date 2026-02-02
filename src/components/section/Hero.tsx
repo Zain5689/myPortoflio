@@ -61,7 +61,7 @@ const Hero = () => {
           </div>
         </div>
         {/* Right Content - Lottie Animation */}
-        <div className="flex-1 flex justify-center items-center mt-12 md:mt-0 z-50">
+        <div className="flex-1 hidden justify-center items-center mt-12 md:mt-0 z-40 md:flex">
           <div className="w-full  relative">
             <div className="absolute inset-0  rounded-full"></div>
 
