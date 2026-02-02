@@ -7,19 +7,16 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const toggleMenu = () => setIsOpen((prev) => !prev);
-  // Blur on scroll
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
-  // Lock scroll when sidebar open
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
   return (
     <>
-      {/* Header */}
       <header
         className={`fixed top-0 w-full z-40 font-poppins transition-all duration-300 ${
           scrolled
@@ -28,7 +25,6 @@ const Navbar = () => {
         }`}
       >
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
-          {/* Logo */}
           <Link
             to="/"
             className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(95,45,237,0.4)]"
@@ -36,7 +32,6 @@ const Navbar = () => {
             Zainab Hilal
           </Link>
 
-          {/* Toggle */}
           <button
             onClick={toggleMenu}
             className="p-2 text-primary rounded-full hover:bg-primary/10 transition-all active:scale-90"
@@ -46,14 +41,12 @@ const Navbar = () => {
         </div>
       </header>
 
-      {/* Overlay */}
       {isOpen && (
         <div
           className="fixed inset-0 bg-black/70 backdrop-blur-sm z-50"
           onClick={toggleMenu}
         />
       )}
-      {/* Sidebar */}
       <aside
         className={`fixed top-0 left-0 h-full w-72 z-60
         bg-[#0a0a0a]/95 backdrop-blur-xl
@@ -61,14 +54,11 @@ const Navbar = () => {
         transition-transform duration-500 ease-in-out
         border-r border-primary/20 shadow-2xl`}
       >
-        {/* Close */}
         <div className="flex justify-end p-6">
           <button onClick={toggleMenu}>
             <CircleX className="text-primary w-9 h-9 hover:scale-110 transition" />
           </button>
         </div>
-
-        {/* Nav */}
         <nav className="flex flex-col p-6 space-y-4">
           {navData.map((item) => (
             <Link
@@ -88,7 +78,6 @@ const Navbar = () => {
             </Link>
           ))}
         </nav>
-        {/* Social */}
         <div className="flex p-6 gap-4">
           <a
             href="https://linkedin.com"

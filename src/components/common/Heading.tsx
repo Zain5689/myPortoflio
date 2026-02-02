@@ -1,15 +1,26 @@
 const Heading = ({ title }: { title: string }) => {
   return (
-    <div className="text-center mb-10">
+    <div className="text-center mb-12">
       <h1
-        className="relative inline-block text-3xl font-bold tracking-widest
-                     after:content-[''] after:absolute after:left-0 after:-bottom-2 text-primary
-                     after:w-0 after:h-1 after:bg-primary
-                     hover:after:w-full after:transition-all after:duration-300"
+        className="
+        relative inline-block
+        text-4xl md:text-5xl font-bold tracking-widest
+        text-primary
+        drop-shadow-[0_0_10px_rgba(120,199,252,0.1)]
+        after:content-['']
+        after:absolute after:left-1/2 after:-translate-x-1/2
+        after:-bottom-5
+        after:w-[50%] after:h-1.5
+        after:rounded-full
+        after:bg-gradient-to-r after:from-primary after:to-green-400
+        after:transition-all after:duration-500
+        hover:after:w-full
+        "
       >
         {title}
       </h1>
     </div>
   );
 };
+
 export default Heading;

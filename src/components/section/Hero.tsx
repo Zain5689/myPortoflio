@@ -15,12 +15,10 @@ const Hero = () => {
 
           <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white leading-tight">
             I'M{" "}
-            <span className="text-primary drop-shadow-[0_0_10px_rgba(167,209,41,0.3)]">
+            <span className="text-primary drop-shadow-[0_0_10px_rgba(120,199,252,0.1)]">
               ZAINAB HILAL
             </span>
           </h1>
-
-          {/* Typewriter Effect */}
           <div className="text-xl md:text-3xl font-roboto text-gray-400 font-light flex gap-2">
             <span>A Creative</span>
             <span className="text-white font-semibold">
@@ -44,8 +42,6 @@ const Hero = () => {
             TypeScript, and Tailwind CSS. dedicated to creating engaging user
             experiences and continuously enhancing web application performance.
           </p>
-
-          {/* Call to Action Buttons */}
           <div className="flex gap-4 pt-6">
             <button className="bg-primary text-black px-8 py-3 rounded-full font-bold hover:shadow-[0_0_5px_#a7d129] transition-all">
               Contact Me
@@ -60,7 +56,6 @@ const Hero = () => {
             </a>
           </div>
         </div>
-        {/* Right Content - Lottie Animation */}
         <div className="flex-1 hidden justify-center items-center mt-12 md:mt-0 z-40 md:flex">
           <div className="w-full  relative">
             <div className="absolute inset-0  rounded-full"></div>

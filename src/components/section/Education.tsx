@@ -30,7 +30,7 @@ const Education = () => {
               </div>
 
               <div className="flex items-center gap-4 w-full">
-                <div className="text-primary">
+                <div className="text-[#17e3ba]">
                   <edu.icon size={24} />
                 </div>
 

@@ -5,9 +5,9 @@ const Home = () => {
     <div>
       <Hero />
       <About />
+      <Education />
       <Skills />
       <Projects />
-      <Education />
     </div>
   );
 };
