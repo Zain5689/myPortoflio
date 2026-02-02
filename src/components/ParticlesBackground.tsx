@@ -5,7 +5,7 @@ import type { Engine } from "@tsparticles/engine";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
 
 const particlesOptions = {
-  background: { color: { value: "#111111" } },
+  background: { color: { value: "#000" } },
   particles: {
     color: { value: "#ffffff" },
     links: { enable: false },

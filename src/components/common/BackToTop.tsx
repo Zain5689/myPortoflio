@@ -22,7 +22,7 @@ const BackToTop = () => {
       className={`
         fixed bottom-6 right-6 z-50
         w-12 h-12 rounded-full flex items-center justify-center
-        bg-gradient-to-tr from-[#3b82f6] to-[#78c7fc]
+        bg-gradient-to-tr from-primary to-primary-dark
         text-white shadow-lg
         transition-all duration-500
         hover:scale-110 hover:shadow-[0_0_20px_rgba(120,199,252,0.4)]

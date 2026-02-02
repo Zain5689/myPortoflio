@@ -18,7 +18,7 @@ const Navbar = () => {
     <header
       className={`fixed w-full z-50 font-poppins transition-all duration-300 ${
         scrolled
-          ? "backdrop-blur-md bg-black/50 shadow-md border-b border-gray-200 dark:border-white/10"
+          ? "backdrop-blur-md bg-black/50 shadow-md border-b border-primary dark:border-white/10"
           : "bg-transparent border-b border-transparent"
       }`}
     >
@@ -26,7 +26,7 @@ const Navbar = () => {
         {/* Logo with Glow Effect */}
         <Link
           to="/"
-          className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(167,209,41,0.5)]"
+          className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(95,45,237,0.1)"
         >
           Zainab Hilal
         </Link>
@@ -62,7 +62,7 @@ const Navbar = () => {
             <Link
               key={item.name}
               to={item.path}
-              className="flex items-center gap-4 text-primary border border-primary/30 rounded-2xl px-6 py-4 hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(167,209,41,0.4)] transition-all duration-300 text-lg font-medium group"
+              className="flex items-center gap-4 text-primary border border-primary/30 rounded-2xl px-6 py-4 hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(95,45,237,0.1)] transition-all duration-300 text-lg font-medium group"
               onClick={toggleMenu}
             >
               <item.icon
@@ -77,13 +77,13 @@ const Navbar = () => {
         <div className="social flex p-2 mx-10 items-center gap-5  ">
           <Link
             to={""}
-            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(167,209,41,0.4)] transition-all duration-300"
+            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(95,45,237,0.1)] transition-all duration-300"
           >
             <Linkedin />
           </Link>
           <Link
             to={""}
-            className="text-primary border border-primary/30  p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(167,209,41,0.4)] transition-all duration-300"
+            className="text-primary border border-primary/30  p-3 rounded-full hover:bg-primary hover:text-black hover:shadow-[0_0_20px_rgba(95,45,237,0.1)] transition-all duration-300"
           >
             <Github />
           </Link>

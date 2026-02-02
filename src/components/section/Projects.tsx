@@ -3,21 +3,13 @@ import { Github, Link2, MoveRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Heading } from "@components/index";
 import { projects } from "@data/projects";
+import { categories } from "@data/categories";
 
 const Projects = () => {
   const [active, setActive] = useState("all");
 
   const filteredProjects =
     active === "all" ? projects : projects.filter((p) => p.category === active);
-
-  const categories = [
-    { key: "all", label: "All" },
-    { key: "css", label: "HTML & CSS" },
-    { key: "js", label: "JavaScript" },
-    { key: "boot", label: "Bootstrap" },
-    { key: "tail", label: "Tailwind" },
-    { key: "react", label: "React" },
-  ];
 
   return (
     <section className="py-24 px-6 relative overflow-hidden ">
