@@ -1,20 +1,34 @@
 import { useEffect, useState } from "react";
-import { CircleX, Github, Linkedin, Menu } from "lucide-react";
+import { CircleX, Github, Linkedin, Menu, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
 import { navData } from "../../data/navItem";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+
   const toggleMenu = () => setIsOpen((prev) => !prev);
+
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "auto";
   }, [isOpen]);
+
+  const scrollToSection = (id: string) => {
+    document.body.style.overflow = "auto";
+    setIsOpen(false);
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }, 10);
+  };
   return (
     <>
       <header
@@ -32,12 +46,22 @@ const Navbar = () => {
             Zainab Hilal
           </Link>
 
-          <button
-            onClick={toggleMenu}
-            className="p-2 text-primary rounded-full hover:bg-primary/10 transition-all active:scale-90"
-          >
-            <Menu size={28} />
-          </button>
+          <div className="flex items-center gap-3 md:gap-5">
+            <button
+              aria-label="Toggle Dark Mode"
+              className="relative p-2.5 text-primary rounded-xl bg-primary/5 hover:bg-primary/15 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90 group"
+            >
+              <Moon size={23} className="transition-transform duration-500" />
+            </button>
+
+            <button
+              onClick={toggleMenu}
+              aria-label="Toggle Menu"
+              className="p-2.5 text-primary rounded-xl bg-primary/5 hover:bg-primary/15 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90"
+            >
+              <Menu size={24} strokeWidth={2.5} />
+            </button>
+          </div>
         </div>
       </header>
 
@@ -61,23 +85,30 @@ const Navbar = () => {
         </div>
         <nav className="flex flex-col p-6 space-y-4">
           {navData.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              onClick={toggleMenu}
+            <button
+              key={item.id}
+              onClick={() => scrollToSection(item.name.toLowerCase())}
               className="
-                flex items-center gap-4
-                text-primary border border-primary/30
-                rounded-2xl px-6 py-4
-                hover:bg-primary hover:text-black
-                transition-all duration-300
-              "
+    group flex items-center gap-4 w-full
+    text-primary border border-primary/20
+    rounded-2xl px-6 py-4
+    hover:bg-primary hover:text-black hover:shadow
+    -[0_0_20px_rgba(120,199,252,0.3)]
+    hover:-translate-y-1 active:scale-[0.98]
+    transition-all duration-300 ease-out
+    cursor-pointer outline-none"
             >
-              <item.icon size={22} />
-              {item.name}
-            </Link>
+              <item.icon
+                size={20}
+                className="group-hover:scale-110 transition-transform"
+              />
+              <span className="font-bold tracking-[0.2em] uppercase text-xs">
+                {item.name}
+              </span>
+            </button>
           ))}
         </nav>
+
         <div className="flex p-6 gap-4">
           <a
             href="https://linkedin.com"

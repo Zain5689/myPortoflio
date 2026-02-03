@@ -5,7 +5,10 @@ import DeveloperFrontEnd from "@assets/lottieFiles/developerskills.lottie";
 
 const Hero = () => {
   return (
-    <section className="relative font-serif h-[70vh] flex flex-col md:flex-row items-center justify-center md:justify-between">
+    <section
+      id="hero"
+      className="relative font-serif h-[70vh] flex flex-col md:flex-row items-center justify-center md:justify-between"
+    >
       <div className="container max-w-7xl mx-auto px-6 relative w-full flex flex-col md:flex-row items-center justify-between">
         {/* Left Content */}
         <div className="flex-1 space-y-4">

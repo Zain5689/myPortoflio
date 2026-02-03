@@ -11,7 +11,7 @@ const Projects = () => {
     active === "all" ? projects : projects.filter((p) => p.category === active);
 
   return (
-    <section className="py-24 px-6 relative overflow-hidden ">
+    <section id="projects" className="py-24 px-6 relative overflow-hidden ">
       <div className="absolute top-1/4 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
 

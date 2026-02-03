@@ -69,7 +69,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary text-black font-bold hover:bg-primary-dark transition-all duration-300 active:scale-[0.98] group">
+                <button className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary text-black font-bold hover:shadow-[0_0_7px_#a7d129] transition-all duration-300 active:scale-[0.98] group">
                   Send Message
                   <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
@@ -86,11 +86,11 @@ const Contact = () => {
               <div className="space-y-6">
                 <ContactItem
                   icon={<Mail className="text-primary w-5 h-5" />}
-                  text="example@gmail.com"
+                  text="zh917694@gmail.com"
                 />
                 <ContactItem
                   icon={<Phone className="text-primary w-5 h-5" />}
-                  text="+20 100 000 0000"
+                  text="+20 128 963 4891"
                 />
                 <ContactItem
                   icon={<MapPin className="text-primary w-5 h-5" />}

@@ -5,7 +5,10 @@ import { educationData } from "@/data/educationData";
 
 const Education = () => {
   return (
-    <div className="container max-w-7xl mx-auto px-6 relative py-8">
+    <div
+      id="education"
+      className="container max-w-7xl mx-auto px-6 relative py-8"
+    >
       <Heading title="Education" />
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-16 items-center">
         <div className="hidden justify-center md:flex">
