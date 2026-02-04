@@ -8,13 +8,13 @@ export const educationData = [
     company: "FCAI",
   },
   {
-    date: "2025 – Oct 2024",
+    date: "2024 – Oct 2024",
     icon: Briefcase,
     title: " Front-End Development -( 1 month)",
     company: "ITI",
   },
   {
-    date: "2025 – Oct 2024",
+    date: "2024 – Oct 2024",
     icon: Code,
     title: "Big Data & Data Management",
     company: "BD",
