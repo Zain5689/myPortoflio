@@ -106,20 +106,29 @@ const Contact = () => {
                   {
                     icon: <Linkedin />,
                     color: "hover:bg-[#0A66C2]",
-                    link: "#",
+                    link: "https://www.linkedin.com/in/zainab-hilal-b5b031225/",
                   },
-                  { icon: <Github />, color: "hover:bg-[#333]", link: "#" },
+                  {
+                    icon: <Github />,
+                    color: "hover:bg-[#333]",
+                    link: "https://github.com/Zain5689",
+                  },
                   {
                     icon: <Facebook />,
                     color: "hover:bg-[#1877F2]",
-                    link: "#",
+                    link: "https://www.facebook.com/zynb.hlal.304562?locale=ar_AR",
                   },
                   { icon: <Twitter />, color: "hover:bg-[#1DA1F2]", link: "#" },
-                  { icon: <Youtube />, color: "hover:bg-[#FF0000]", link: "#" },
+                  {
+                    icon: <Youtube />,
+                    color: "hover:bg-[#FF0000]",
+                    link: "https://www.youtube.com/@zainabHilal-o2c",
+                  },
                 ].map((social, idx) => (
                   <Link
                     key={idx}
                     to={social.link}
+                    target="blank"
                     className={`w-12 h-12 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-gray-400 transition-all duration-500 hover:text-white hover:-translate-y-2 ${social.color} hover:shadow-xl`}
                   >
                     {social.icon}

@@ -108,24 +108,23 @@ const Navbar = () => {
             </button>
           ))}
         </nav>
-
         <div className="flex p-6 gap-4">
-          <a
-            href="https://linkedin.com"
+          <Link
+            to={"https://www.linkedin.com/in/zainab-hilal-b5b031225/"}
             target="_blank"
             rel="noreferrer"
             className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
           >
             <Linkedin />
-          </a>
-          <a
-            href="https://github.com"
+          </Link>
+          <Link
+            to={"https://github.com/Zain5689"}
             target="_blank"
             rel="noreferrer"
             className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
           >
             <Github />
-          </a>
+          </Link>
         </div>
       </aside>
     </>
