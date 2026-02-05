@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { CircleX, Github, Linkedin, Menu, Moon } from "lucide-react";
+import { useContext, useEffect, useState } from "react";
+import { CircleX, Github, Linkedin, Menu, Moon, Sun } from "lucide-react";
 import { Link } from "react-router-dom";
 import { navData } from "@data/navItem";
-
+import { ThemeContext } from "@/context/themeContext";
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -28,6 +28,8 @@ const Navbar = () => {
       }
     }, 10);
   };
+  const { theme, themeSwitchHandler } = useContext(ThemeContext);
+
   return (
     <>
       <header
@@ -49,8 +51,11 @@ const Navbar = () => {
             <button
               aria-label="Toggle Dark Mode"
               className="relative p-2.5 text-primary rounded-xl bg-primary/5 hover:bg-primary/15 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90 group"
+              onClick={() =>
+                themeSwitchHandler(theme === "dark" ? "light" : "dark")
+              }
             >
-              <Moon size={23} className="transition-transform duration-500" />
+              {theme === "dark" ? <Moon size={23} /> : <Sun size={23} />}{" "}
             </button>
 
             <button
