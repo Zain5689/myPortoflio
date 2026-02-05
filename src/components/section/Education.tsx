@@ -38,7 +38,7 @@ const Education = () => {
                 </div>
 
                 <div className="flex flex-col">
-                  <div className="font-semibold text-lg dark:text-white">
+                  <div className="font-semibold text-lg dark:text-text-main">
                     {edu.title}
                   </div>
                   <div className="text-sm dark:text-primary-light">
