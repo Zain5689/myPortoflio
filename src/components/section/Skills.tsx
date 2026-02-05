@@ -18,7 +18,7 @@ const Skills = () => {
               key={skill.id}
               className="group relative bg-surface border border-white/5 p-6 md:p-8 rounded-2xl flex flex-col items-center justify-center transition-all duration-500 hover:border-primary/40 hover:shadow-[0_10px_30px_rgba(120,199,252,0.1)] hover:-translate-y-2 overflow-hidden"
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-linear-to-br from-primary/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
 
               <h2 className="text-text-main text-sm md:text-base font-bold tracking-wider uppercase text-center transition-colors group-hover:text-primary z-10">
                 {skill.skillName}

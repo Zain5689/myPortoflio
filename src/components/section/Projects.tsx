@@ -27,7 +27,7 @@ const Projects = () => {
                 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-500
                 ${
                   active === btn.key
-                    ? "bg-primary text-white shadow-[0_10px_20px_rgba(95,45,237,0.3)] -translate-y-1"
+                    ? "bg-primary text-text-main shadow-[0_10px_20px_rgba(95,45,237,0.3)] -translate-y-1"
                     : "bg-surface/30 text-text-muted border border-white/5 hover:border-primary/30 hover:text-primary backdrop-blur-sm"
                 }
               `}
@@ -50,7 +50,7 @@ const Projects = () => {
                     alt={project.title}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-bg-dark via-bg-dark/20 to-transparent opacity-90"></div>
+                  <div className="absolute inset-0 bg-linear-to-t from-bg-dark via-bg-dark/20 to-transparent opacity-90"></div>
 
                   <span className="absolute top-5 left-5 bg-primary/20 backdrop-blur-md text-primary text-[10px] font-bold uppercase tracking-[0.2em] px-4 py-1.5 rounded-full border border-primary/30 z-10">
                     {project.category}
@@ -61,7 +61,7 @@ const Projects = () => {
                   <h3 className="text-text-main text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-text-muted text-sm leading-relaxed mb-8 line-clamp-2 min-h-[40px]">
+                  <p className="text-text-muted text-sm leading-relaxed mb-8 line-clamp-2 min-h-10">
                     {project.paragraph}
                   </p>
 
