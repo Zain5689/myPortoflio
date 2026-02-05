@@ -1,3 +1,7 @@
+export interface categories {
+  key: string;
+  label: string;
+}
 export const categories = [
   { key: "all", label: "All" },
   { key: "CSS", label: "HTML & CSS" },

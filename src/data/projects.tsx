@@ -1,3 +1,12 @@
+export interface projects {
+  id: string | number;
+  title: string;
+  category: string;
+  image: string;
+  paragraph: string;
+  link: string;
+  github: string;
+}
 export const projects = [
   {
     id: "1",

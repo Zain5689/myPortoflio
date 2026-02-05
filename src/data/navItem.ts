@@ -1,5 +1,10 @@
 import { Home, User, GraduationCap, Cpu, Code2, Send } from "lucide-react";
-
+export interface navData {
+  id: string | number;
+  name: string;
+  path: string;
+  Home: string;
+}
 export const navData = [
   { id: 1, name: "Home", path: "/hero", icon: Home },
   { id: 2, name: "About", path: "/about", icon: User },
