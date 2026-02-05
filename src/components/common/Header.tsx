@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { CircleX, Github, Linkedin, Menu, Moon } from "lucide-react";
 import { Link } from "react-router-dom";
-import { navData } from "../../data/navItem";
+import { navData } from "@data/navItem";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -20,7 +20,6 @@ const Navbar = () => {
   }, [isOpen]);
 
   const scrollToSection = (id: string) => {
-    document.body.style.overflow = "auto";
     setIsOpen(false);
     setTimeout(() => {
       const section = document.getElementById(id);
@@ -32,7 +31,7 @@ const Navbar = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-40 font-poppins transition-all duration-300 ${
+        className={`fixed top-0 w-full z-50 font-poppins transition-all duration-300 ${
           scrolled
             ? "backdrop-blur-md bg-black/60 shadow-md border-b border-primary/20"
             : "bg-transparent"

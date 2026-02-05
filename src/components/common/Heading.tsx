@@ -12,7 +12,7 @@ const Heading = ({ title }: { title: string }) => {
         after:-bottom-5
         after:w-[50%] after:h-1.5
         after:rounded-full
-        after:bg-gradient-to-r after:from-primary after:to-green-400
+        after:bg-linear-to-r after:from-primary after:to-text-muted
         after:transition-all after:duration-500
         hover:after:w-full
         "

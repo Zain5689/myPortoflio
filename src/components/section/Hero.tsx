@@ -16,15 +16,15 @@ const Hero = () => {
             Hi There! 👋
           </h2>
 
-          <h1 className="text-4xl md:text-6xl font-poppins font-bold text-white leading-tight">
+          <h1 className="text-4xl md:text-6xl font-poppins font-bold text-text-main leading-tight">
             I'M{" "}
             <span className="text-primary drop-shadow-[0_0_10px_rgba(120,199,252,0.1)]">
               ZAINAB HILAL
             </span>
           </h1>
-          <div className="text-xl md:text-3xl font-roboto text-gray-400 font-light flex gap-2">
+          <div className="text-xl md:text-3xl font-roboto text-text-muted font-light flex gap-2">
             <span>A Creative</span>
-            <span className="text-white font-semibold">
+            <span className="text-text-main font-semibold">
               <Typewriter
                 options={{
                   strings: [
@@ -40,7 +40,7 @@ const Hero = () => {
             </span>
           </div>
 
-          <p className="text-gray-500 max-w-lg text-lg leading-relaxed pt-4">
+          <p className="text-text-muted max-w-lg text-lg leading-relaxed pt-4">
             Aspiring Front-End Developer with expertise in React, Next.js,
             TypeScript, and Tailwind CSS. dedicated to creating engaging user
             experiences and continuously enhancing web application performance.

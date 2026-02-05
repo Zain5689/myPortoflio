@@ -16,15 +16,10 @@ import ContactItem from "./ContactItem";
 const Contact = () => {
   return (
     <section id="contact" className="relative py-20 overflow-hidden">
-      {/* Background Decorations */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px] -z-10"></div>
-
       <div className="container max-w-7xl mx-auto px-6">
         <Heading title="Get In Touch" />
-
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-start mt-16">
-          {/* Form Side */}
-          <div className="relative group p-[1px] rounded-3xl bg-gradient-to-b from-white/10 to-transparent shadow-2xl">
+          <div className="relative group p-px rounded-3xl bg-linear-to-b from-white/10 to-transparent shadow-2xl">
             <div className="bg-[#0f0f0f]/80 backdrop-blur-2xl rounded-[23px] p-8 md:p-12">
               <h3 className="text-2xl font-bold text-white mb-2">
                 Send me a <span className="text-primary">Message</span>
