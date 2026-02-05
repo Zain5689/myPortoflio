@@ -10,7 +10,7 @@ const ContactItem = ({
       <div className="scale-110 transition-transform duration-300">{icon}</div>
     </div>
 
-    <span className="text-base md:text-lg font-medium text-gray-400 group-hover:text-white transition-colors duration-300">
+    <span className="text-base md:text-lg font-medium text-text-muted group-hover:text-text-main transition-colors duration-300">
       {text}
     </span>
   </div>
