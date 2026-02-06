@@ -1,8 +1,8 @@
 import { Outlet } from "react-router-dom";
 import { Footer, Header, BackToTop } from "@components/index";
 import { useContext } from "react";
-import { ThemeContext } from "@context/themeContext";
 import ParticlesBackground from "@components/ParticlesBackground";
+import { ThemeContext } from "@/context/themeContext";
 
 const MainLayout = () => {
   const { theme } = useContext(ThemeContext);

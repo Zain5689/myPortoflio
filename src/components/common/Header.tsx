@@ -42,7 +42,7 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-6 flex items-center justify-between py-4">
           <Link
             to="/"
-            className="text-2xl font-bold text-primary drop-shadow-[0_0_8px_rgba(95,45,237,0.4)]"
+            className="text-2xl font-bold text-primary-dark dark:text-primary-dark dark:text-primary-dark dark:text-primary drop-shadow-[0_0_8px_rgba(95,45,237,0.4)]"
           >
             Zainab Hilal
           </Link>
@@ -50,7 +50,8 @@ const Navbar = () => {
           <div className="flex items-center gap-3 md:gap-5">
             <button
               aria-label="Toggle Dark Mode"
-              className="relative p-2.5 text-primary rounded-xl bg-primary/5 hover:bg-primary/15 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90 group"
+              className="relative p-2.5 text-primary-dark dark:text-primary rounded-xl bg-primary/15 dark:bg-primary-dark/20 hover:bg-primary/25 
+  dark:hover:bg-primary-dark/30 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90 group"
               onClick={() =>
                 themeSwitchHandler(theme === "dark" ? "light" : "dark")
               }
@@ -61,7 +62,7 @@ const Navbar = () => {
             <button
               onClick={toggleMenu}
               aria-label="Toggle Menu"
-              className="p-2.5 text-primary rounded-xl bg-primary/5 hover:bg-primary/15 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90"
+              className="p-2.5 text-primary-dark dark:text-primary rounded-xl bg-primary/15 hover:bg-primary/15 transition-all duration-300 hover:shadow-[0_0_15px_rgba(120,199,252,0.2)] active:scale-90"
             >
               <Menu size={24} strokeWidth={2.5} />
             </button>
@@ -84,7 +85,7 @@ const Navbar = () => {
       >
         <div className="flex justify-end p-6">
           <button onClick={toggleMenu}>
-            <CircleX className="text-primary w-9 h-9 hover:scale-110 transition" />
+            <CircleX className="text-primary-dark dark:text-primary w-9 h-9 hover:scale-110 transition" />
           </button>
         </div>
         <nav className="flex flex-col p-6 space-y-4">
@@ -94,7 +95,7 @@ const Navbar = () => {
               onClick={() => scrollToSection(item.name.toLowerCase())}
               className="
     group flex items-center gap-4 w-full
-    text-primary border border-primary/20
+    text-primary-dark dark:text-primary border border-primary/20
     rounded-2xl px-6 py-4
     hover:bg-primary hover:text-black hover:shadow
     -[0_0_20px_rgba(120,199,252,0.3)]
@@ -117,7 +118,7 @@ const Navbar = () => {
             to={"https://www.linkedin.com/in/zainab-hilal-b5b031225/"}
             target="_blank"
             rel="noreferrer"
-            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
+            className="text-primary-dark dark:text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
           >
             <Linkedin />
           </Link>
@@ -125,7 +126,7 @@ const Navbar = () => {
             to={"https://github.com/Zain5689"}
             target="_blank"
             rel="noreferrer"
-            className="text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
+            className="text-primary-dark dark:text-primary border border-primary/30 p-3 rounded-full hover:bg-primary hover:text-black transition"
           >
             <Github />
           </Link>
