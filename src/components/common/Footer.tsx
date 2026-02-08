@@ -3,7 +3,7 @@ const Footer = () => {
     <footer
       className="
         w-full py-4 text-center 
-       dark:bg-transparent bg-primary-dark backdrop-blur-md 
+        dark:bg-transparent bg-primary-dark backdrop-blur-md 
         border-t border-primary/20
         text-text-main
         transition-colors duration-500
