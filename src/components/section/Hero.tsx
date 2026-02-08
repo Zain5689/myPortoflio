@@ -12,7 +12,7 @@ const Hero = () => {
       <div className="container max-w-7xl mx-auto px-6 relative w-full flex flex-col md:flex-row items-center justify-between">
         {/* Left Content */}
         <div className="flex-1 space-y-4">
-          <h2 className="text-primary font-poppins text-xl font-medium tracking-wider">
+          <h2 className="dark:text-primary text-primary-dark font-poppins text-xl font-medium tracking-wider">
             Hi There! 👋
           </h2>
 

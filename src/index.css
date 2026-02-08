@@ -4,17 +4,20 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where(.dark, .dark *));
-
 @theme {
   --color-primary: #78c7fc;
-  --color-primary-dark: #3b82f6;
+  --color-primary-dark: #0284c7;
+  --color-primary-deep: #0c4a6e;
   --color-primary-light: #e0f2fe;
 
-  --color-bg-dark: #111827;
-  --color-surface: #1f2937;
+  --color-bg-dark: #030712;
+  --color-surface: #111827;
 
   --color-text-main: #f9fafb;
-  --color-text-muted: #9ca3af;
+  --color-text-muted: #94a3b8;
+
+  --color-text-main-dark: #0f172a;
+  --color-text-muted-dark: #475569;
 
   /* FONT FAMILY */
   --font-roboto: "Roboto", sans-serif;
