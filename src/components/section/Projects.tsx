@@ -12,12 +12,14 @@ const Projects = () => {
 
   return (
     <section id="projects" className="py-24 px-6 relative overflow-hidden ">
+      {/* Decorative glows */}
       <div className="absolute top-1/4 -right-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
       <div className="absolute bottom-1/4 -left-20 w-80 h-80 bg-primary/10 rounded-full blur-[120px] -z-10"></div>
 
       <div className="max-w-7xl mx-auto">
         <Heading title="Featured Projects" />
 
+        {/* Category filter buttons */}
         <div className="flex flex-wrap justify-center gap-3 mt-12 mb-20">
           {categories.map((btn) => (
             <button
@@ -27,8 +29,8 @@ const Projects = () => {
                 px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-500
                 ${
                   active === btn.key
-                    ? "bg-primary text-text-main shadow-[0_10px_20px_rgba(95,45,237,0.3)] -translate-y-1"
-                    : "bg-surface/30 text-text-muted border border-white/5 hover:border-primary/30 hover:text-primary backdrop-blur-sm"
+                    ? "bg-primary-dark text-white dark:text-text-main shadow-[0_10px_20px_rgba(95,45,237,0.3)] -translate-y-1"
+                    : "bg-gray-100 dark:bg-surface/30 text-text-main-dark dark:text-text-muted border border-gray-200 dark:border-white/5 hover:border-primary/30 hover:text-primary backdrop-blur-sm"
                 }
               `}
             >
@@ -37,12 +39,13 @@ const Projects = () => {
           ))}
         </div>
 
+        {/* Project cards */}
         {filteredProjects.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredProjects.map((project) => (
               <article
                 key={project.id}
-                className="group bg-surface/20 rounded-2xl border border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500  hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+                className="group bg-white dark:bg-surface/20 rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img
@@ -58,26 +61,26 @@ const Projects = () => {
                 </div>
 
                 <div className="p-8">
-                  <h3 className="text-text-main text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+                  <h3 className="text-text-main-dark dark:text-text-main text-2xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>
-                  <p className="text-text-muted text-sm leading-relaxed mb-8 line-clamp-2 min-h-10">
+                  <p className="text-text-muted-dark dark:text-text-muted text-sm leading-relaxed mb-8 line-clamp-2 min-h-10">
                     {project.paragraph}
                   </p>
 
-                  <div className="flex items-center justify-between pt-6 border-t border-white/5">
+                  <div className="flex items-center justify-between pt-6 border-t border-gray-200 dark:border-white/5">
                     <div className="flex gap-6">
                       <Link
                         to={project.link}
                         target="_blank"
-                        className="text-text-muted hover:text-primary transition-all duration-300 hover:scale-125"
+                        className="text-text-muted-dark dark:text-text-muted hover:text-primary transition-all duration-300 hover:scale-125"
                       >
                         <Link2 size={20} />
                       </Link>
                       <Link
                         to={project.github}
                         target="_blank"
-                        className="text-text-muted hover:text-primary transition-all duration-300 hover:scale-125"
+                        className="text-text-muted-dark dark:text-text-muted hover:text-primary transition-all duration-300 hover:scale-125"
                       >
                         <Github size={20} />
                       </Link>
@@ -98,8 +101,8 @@ const Projects = () => {
             ))}
           </div>
         ) : (
-          <div className="text-center py-20 bg-surface/10 rounded-3xl border border-dashed border-white/10">
-            <p className="text-text-muted text-lg italic">
+          <div className="text-center py-20 bg-gray-50 dark:bg-surface/10 rounded-3xl border border-dashed border-gray-200 dark:border-white/10">
+            <p className="text-text-muted-dark dark:text-text-muted text-lg italic">
               No projects found in this category yet.
             </p>
           </div>

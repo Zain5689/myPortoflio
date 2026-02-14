@@ -37,7 +37,7 @@ const Skills = () => {
               {/* Hover overlay */}
               <div
                 className="absolute inset-0 
-                              bg-gradient-to-br from-primary-light to-transparent 
+                bg-linear-to-br from-primary-light to-transparent 
                               dark:from-primary/10 dark:to-transparent 
                               opacity-0 group-hover:opacity-100 
                               transition-opacity duration-500"
@@ -46,8 +46,8 @@ const Skills = () => {
               {/* Skill name */}
               <h2
                 className="text-text-main-dark dark:text-text-main 
-                             text-sm md:text-base font-bold tracking-wider uppercase text-center 
-                             transition-colors group-hover:text-primary-dark dark:group-hover:text-primary z-10"
+                text-sm md:text-base font-bold tracking-wider uppercase text-center 
+                transition-colors group-hover:text-primary-dark dark:group-hover:text-primary z-10"
               >
                 {skill.skillName}
               </h2>
