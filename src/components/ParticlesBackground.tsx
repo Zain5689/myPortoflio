@@ -5,21 +5,23 @@ import type { Engine } from "@tsparticles/engine";
 import { loadSnowPreset } from "@tsparticles/preset-snow";
 
 const particlesOptions = {
-  background: { color: { value: "#000" } },
+  background: { color: { value: "#030712" } }, // use --color-bg-dark
   particles: {
-    color: { value: "#ffffff" },
+    color: { value: ["#e0f2fe", "#78c7fc"] }, // primary-light + primary
     links: { enable: false },
     move: {
-      // enable: true,
-      enable: false,
-      direction: "bottom" as const,
+      enable: true,
+      direction: "bottom",
       random: true,
       straight: false,
-      speed: 1,
-      outModes: { default: "destroy" as const },
+      speed: 0.8,
+      outModes: { default: "destroy" },
     },
-    number: { density: { enable: true, value_area: 800 }, value: 100 },
-    opacity: { value: { min: 0.1, max: 0.8 } },
+    number: { density: { enable: true, value_area: 800 }, value: 120 },
+    opacity: {
+      value: { min: 0.2, max: 0.9 },
+      animation: { enable: true, speed: 1, minimumValue: 0.2, sync: false },
+    },
     shape: { type: "circle" },
     size: { value: { min: 1, max: 3 } },
   },
