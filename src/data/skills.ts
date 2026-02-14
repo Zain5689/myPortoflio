@@ -1,21 +1,59 @@
-export interface Skill {
-  id: string;
-  skillName: string;
-}
-export const skills: Skill[] = [
-  { id: "1", skillName: "HTML" },
-  { id: "2", skillName: "CSS" },
-  { id: "3", skillName: "JavaScript" },
-  { id: "4", skillName: "SCSS" },
-  { id: "5", skillName: "Bootstrap" },
-  { id: "6", skillName: "Tailwind" },
-  { id: "7", skillName: "TypeScript" },
-  { id: "8", skillName: "React" },
-  { id: "9", skillName: "Redux" },
-  { id: "10", skillName: "Next.js" },
-  { id: "11", skillName: "React Hook Form" },
-  { id: "12", skillName: "Redux Toolkit" },
-  { id: "13", skillName: "Git" },
-  { id: "14", skillName: "GitHub" },
-  { id: "15", skillName: "Figma" },
+import {
+  Code2,
+  Layout,
+  FileJson,
+  Palette,
+  Cpu,
+  Terminal,
+  Layers,
+  GitBranch,
+  Figma,
+  Globe,
+  Database,
+  Cloud,
+  Server,
+  Package,
+  Component,
+} from "lucide-react";
+
+export const skills = [
+  { id: "1", skillName: "HTML", Icon: Code2, color: "text-orange-500" },
+  { id: "2", skillName: "CSS", Icon: Layout, color: "text-blue-500" },
+  {
+    id: "3",
+    skillName: "JavaScript",
+    Icon: FileJson,
+    color: "text-yellow-400",
+  },
+  { id: "4", skillName: "Bootstrap", Icon: Palette, color: "text-purple-600" },
+  { id: "5", skillName: "Tailwind CSS", Icon: Cpu, color: "text-sky-400" },
+  { id: "6", skillName: "TypeScript", Icon: Terminal, color: "text-blue-600" },
+  { id: "7", skillName: "React", Icon: Layers, color: "text-cyan-400" },
+  { id: "8", skillName: "Git", Icon: GitBranch, color: "text-red-500" },
+  { id: "9", skillName: "Figma", Icon: Figma, color: "text-pink-500" },
+  {
+    id: "10",
+    skillName: "Next.js",
+    Icon: Globe,
+    color: "text-gray-800 dark:text-white",
+  },
+  { id: "11", skillName: "Node.js", Icon: Server, color: "text-green-600" },
+  {
+    id: "13",
+    skillName: "Redux Toolkit",
+    Icon: Layers,
+    color: "text-purple-500",
+  },
+  { id: "17", skillName: "SQL", Icon: Database, color: "text-indigo-500" },
+  { id: "18", skillName: "MongoDB", Icon: Database, color: "text-green-500" },
+  { id: "20", skillName: "AWS", Icon: Cloud, color: "text-orange-400" },
+
+  { id: "21", skillName: "Material UI", Icon: Package, color: "text-blue-400" },
+  {
+    id: "22",
+    skillName: "ShadCN UI",
+    Icon: Component,
+    color: "text-violet-500",
+  },
+  { id: "21", skillName: "Python", Icon: Terminal, color: "text-green-400" },
 ];

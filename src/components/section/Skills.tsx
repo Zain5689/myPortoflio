@@ -5,59 +5,40 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="py-16 md:py-24 px-4 md:px-6 relative overflow-hidden 
-                 bg-primary-light dark:bg-bg-dark"
+      className="
+        py-24
+        relative
+        overflow-hidden
+      "
     >
-      {/* Decorative background accent */}
-      <div
-        className="absolute -top-24 -left-24 w-72 h-72 md:w-96 md:h-96 
-                      bg-primary-light dark:bg-primary/10 
-                      rounded-full blur-[100px] md:blur-[120px] -z-10"
-      ></div>
-
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-6xl mx-auto px-6 text-center">
         <Heading title="Skills" />
 
         <div
-          className="grid grid-cols-2 min-[500px]:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 
-                        gap-6 md:gap-8 mt-12 md:mt-20"
+          className="
+            flex flex-wrap justify-center gap-4
+            mt-16
+          "
         >
-          {skills.map((skill) => (
+          {skills.map(({ id, skillName, Icon, color }) => (
             <div
-              key={skill.id}
-              className="group relative 
-                         bg-white dark:bg-surface 
-                         border border-gray-200 dark:border-white/5 
-                         p-6 md:p-8 rounded-2xl flex flex-col items-center justify-center 
-                         transition-all duration-500 
-                         hover:border-primary/40 
-                         hover:shadow-lg hover:shadow-primary/20 
-                         hover:-translate-y-2 overflow-hidden"
+              key={id}
+              className="
+                flex items-center gap-5
+                px-5 py-2.5
+                rounded-full
+                border border-gray-300 dark:border-primary/50
+                text-gray-800 dark:text-text-main
+                bg-gray-50 dark:bg-transparent
+                transition-all duration-300
+                hover:bg-primary/10
+                hover:border-primary
+                hover:-translate-y-1
+                mb-2
+              "
             >
-              {/* Hover overlay */}
-              <div
-                className="absolute inset-0 
-                bg-linear-to-br from-primary-light to-transparent 
-                              dark:from-primary/10 dark:to-transparent 
-                              opacity-0 group-hover:opacity-100 
-                              transition-opacity duration-500"
-              ></div>
-
-              {/* Skill name */}
-              <h2
-                className="text-text-main-dark dark:text-text-main 
-                text-sm md:text-base font-bold tracking-wider uppercase text-center 
-                transition-colors group-hover:text-primary-dark dark:group-hover:text-primary z-10"
-              >
-                {skill.skillName}
-              </h2>
-
-              {/* Animated underline */}
-              <div
-                className="absolute bottom-0 left-0 w-0 h-1 bg-primary 
-                              shadow-[0_0_10px_#78c7fc] 
-                              transition-all duration-500 group-hover:w-full"
-              ></div>
+              <Icon size={25} className={color} />
+              <span className="text-md font-medium">{skillName}</span>
             </div>
           ))}
         </div>

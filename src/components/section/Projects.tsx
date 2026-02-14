@@ -45,7 +45,9 @@ const Projects = () => {
             {filteredProjects.map((project) => (
               <article
                 key={project.id}
-                className="group bg-white dark:bg-surface/20 rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500 hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
+                className="group bg-white dark:bg-surface/20 rounded-2xl border border-gray-200 dark:border-white/10 overflow-hidden hover:border-primary/40 transition-all duration-500 
+                shadow-[0_0_15px_rgba(120,199,252,0.5)] dark:shadow-lg
+                hover:shadow-[0_20px_50px_rgba(0,0,0,0.2)] dark:hover:shadow-[0_20px_50px_rgba(0,0,0,0.4)]"
               >
                 <div className="relative h-64 overflow-hidden">
                   <img

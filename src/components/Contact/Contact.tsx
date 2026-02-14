@@ -26,7 +26,10 @@ const Contact = () => {
           <div className="relative group p-px rounded-3xl bg-linear-to-b from-gray-200/20 to-transparent dark:from-white/10 shadow-2xl">
             <div className="bg-white dark:bg-surface backdrop-blur-2xl rounded-[23px] p-8 md:p-12">
               <h3 className="text-2xl font-bold text-text-main-dark dark:text-text-main mb-2">
-                Send me a <span className="text-primary">Message</span>
+                Send me a{" "}
+                <span className="text-primary-dark dark:text-primary">
+                  Message
+                </span>
               </h3>
               <p className="text-text-muted-dark dark:text-gray-400 text-sm mb-10 leading-relaxed">
                 Have a specific inquiry or just want to say hi? Fill out the
@@ -68,7 +71,7 @@ const Contact = () => {
                   />
                 </div>
 
-                <button className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary text-black dark:text-bg-dark font-bold hover:shadow-[0_0_7px_#a7d129] transition-all duration-300 active:scale-[0.98] group">
+                <button className="w-full flex items-center justify-center gap-2 py-4 rounded-xl bg-primary-dark dark:bg-primary text-primary-light dark:text-black dark:text-dark font-bold hover:shadow-[0_0_7px_#a7d129] transition-all duration-300 active:scale-[0.98] group">
                   Send Message
                   <Send className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
                 </button>
@@ -84,15 +87,15 @@ const Contact = () => {
               </h4>
               <div className="space-y-6">
                 <ContactItem
-                  icon={<Mail className="text-primary w-5 h-5" />}
+                  icon={<Mail className=" w-5 h-5" />}
                   text="zh917694@gmail.com"
                 />
                 <ContactItem
-                  icon={<Phone className="text-primary w-5 h-5" />}
+                  icon={<Phone className=" w-5 h-5" />}
                   text="+20 128 963 4891"
                 />
                 <ContactItem
-                  icon={<MapPin className="text-primary w-5 h-5" />}
+                  icon={<MapPin className=" w-5 h-5" />}
                   text="Egypt, Cairo"
                 />
               </div>
@@ -130,7 +133,7 @@ const Contact = () => {
                     key={idx}
                     to={social.link}
                     target="blank"
-                    className={`w-12 h-12 rounded-2xl bg-gray-100 dark:bg-white/5 border border-gray-200 dark:border-white/10 flex items-center justify-center text-gray-500 dark:text-gray-400 transition-all duration-500 hover:text-white hover:-translate-y-2 ${social.color} hover:shadow-xl`}
+                    className={`w-12 h-12 rounded-2xl bg-primary-dark dark:bg-primary  text-white dark:text-black border border-gray-200 dark:border-white/10 flex items-center justify-center transition-all duration-500 hover:text-white hover:-translate-y-2 ${social.color} hover:shadow-xl`}
                   >
                     {social.icon}
                   </Link>
